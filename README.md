@@ -14,10 +14,10 @@ A real-time queue management system for restaurants built with Node.js, Express,
 
 ## Screenshots
 
-![Screenshot 1](images/client.png)
-![Screenshot 2](images/client2.png)
-![Screenshot 3](images/manager.png)
-![Screenshot 4](images/manager2.png)
+![Screenshot 1](images/client.png){: style="height:150px"}
+![Screenshot 2](images/client2.png){: style="height:150px"}
+![Screenshot 3](images/manager.png){: style="height:150px"}
+![Screenshot 4](images/manager2.png){: style="height:150px"}
 
 
 ## Prerequisites
