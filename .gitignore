@@ -44,3 +44,8 @@ yarn-error.log*
 
 # Yarn Integrity file
 .yarn-integrity
+
+
+# ignore node_modules inside folder client and server
+/client/node_modules
+/server/node_modules
