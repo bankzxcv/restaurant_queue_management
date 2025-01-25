@@ -147,7 +147,7 @@ function ManagerView() {
             </div>
             <div className="w-[100%]">
               <h2 className="text-xl sm:text-2xl font-bold mb-4">Current Queue</h2>
-              <div className="max-h-[calc(100vh-300px)] overflow-y-auto">
+              <div className="max-h-[calc(100vh-300px)] overflow-y-auto w-full sm:w-[90%] md:w-[80%]">
                 <QueueList
                   queues={data.getAllQueues}
                   onUpdateStatus={handleUpdateStatus}
