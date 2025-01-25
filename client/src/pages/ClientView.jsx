@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useQuery, useMutation, gql } from "@apollo/client"
+import { gql, useMutation, useQuery } from "@apollo/client"
 
 const GET_QUEUE_STATUS = gql`
   query GetQueueStatus {
@@ -40,7 +40,7 @@ const ClientView = () => {
   const queueCount = data?.getAllQueues?.length || 0
   const estimatedWaitTime = data?.getCurrentWaitTime || 0
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault()
     try {
       const result = await addToQueue({
@@ -70,20 +70,14 @@ const ClientView = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Status Display */}
           <div className="p-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Current Queue Status
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Current Queue Status</h2>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-blue-50 p-6 rounded-lg">
-                <p className="text-4xl font-bold text-blue-600 mb-2">
-                  {queueCount}
-                </p>
+                <p className="text-4xl font-bold text-blue-600 mb-2">{queueCount}</p>
                 <p className="text-sm text-blue-600">People in Queue</p>
               </div>
               <div className="bg-green-50 p-6 rounded-lg">
-                <p className="text-4xl font-bold text-green-600 mb-2">
-                  {estimatedWaitTime}
-                </p>
+                <p className="text-4xl font-bold text-green-600 mb-2">{estimatedWaitTime}</p>
                 <p className="text-sm text-green-600">Minutes Wait</p>
               </div>
             </div>
@@ -91,7 +85,7 @@ const ClientView = () => {
 
           {/* Submission Result */}
           {submissionResult && (
-            <div className={`p-4 ${submissionResult.success ? 'bg-green-50' : 'bg-red-50'}`}>
+            <div className={`p-4 ${submissionResult.success ? "bg-green-50" : "bg-red-50"}`}>
               {submissionResult.success ? (
                 <div className="text-center text-green-700">
                   <p className="font-semibold">Successfully joined queue!</p>
@@ -118,15 +112,11 @@ const ClientView = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Name
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                   <input
                     type="text"
                     value={formData.customerName}
-                    onChange={(e) =>
-                      setFormData({ ...formData, customerName: e.target.value })
-                    }
+                    onChange={e => setFormData({ ...formData, customerName: e.target.value })}
                     className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     required
                   />
@@ -138,20 +128,16 @@ const ClientView = () => {
                   <input
                     type="tel"
                     value={formData.phoneNumber}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phoneNumber: e.target.value })
-                    }
+                    onChange={e => setFormData({ ...formData, phoneNumber: e.target.value })}
                     className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Party Size
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Party Size</label>
                   <select
                     value={formData.partySize}
-                    onChange={(e) =>
+                    onChange={e =>
                       setFormData({
                         ...formData,
                         partySize: parseInt(e.target.value),
@@ -162,7 +148,7 @@ const ClientView = () => {
                   >
                     {[...Array(12)].map((_, i) => (
                       <option key={i + 1} value={i + 1}>
-                        {i + 1} {i === 0 ? 'person' : 'people'}
+                        {i + 1} {i === 0 ? "person" : "people"}
                       </option>
                     ))}
                   </select>

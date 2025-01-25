@@ -16,7 +16,7 @@ const QueueForm = ({ onSubmit }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-white rounded-lg shadow-md">
+    <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-white rounded-lg shadow-md max-w-[75%]">
       <div>
         <label htmlFor="customerName" className="block text-sm font-medium text-gray-700 mb-1">
           Name
