@@ -10,6 +10,16 @@ A real-time queue management system for restaurants built with Node.js, Express,
 - Modern UI with Tailwind CSS and shadcn components
 - GraphQL API for efficient data fetching
 
+## Screenshots
+
+## Screenshots
+
+![Screenshot 1](images/client.png)
+![Screenshot 2](images/client2.png)
+![Screenshot 3](images/manager.png)
+![Screenshot 4](images/manager2.png)
+
+
 ## Prerequisites
 
 - Node.js (v16 or higher)
